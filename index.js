@@ -65,3 +65,10 @@ function allWagesFor(obj) {
     })
     return total;
  }
+
+ //Added findEmployeeByFirstName function
+function findEmployeeByFirstName(arr, name) {
+    let f = arr.find(a=>a.firstName === name)
+    if(f) return f;
+    return undefined;
+}
