@@ -30,3 +30,15 @@ function createTimeInEvent(obj, dt) {
     obj.timeInEvents.push(to)
     return obj;
 }
+
+//Added createTimeOutEvent function
+function createTimeOutEvent(obj, dt) {
+    let d = dt.split(" ");
+    let to = {
+        type: "TimeOut",
+        hour: parseInt(d[1]),
+        date: d[0],
+    }
+    obj.timeOutEvents.push(to)
+    return obj;
+}
