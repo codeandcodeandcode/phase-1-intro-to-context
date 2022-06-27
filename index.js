@@ -55,3 +55,13 @@ function wagesEarnedOnDate(obj, dt) {
     let c = Math.floor(hoursWorkedOnDate(obj, dt) * obj.payPerHour);
     return c;
 }
+
+//Added allWagesFor function
+function allWagesFor(obj) {
+    let dates = obj.timeInEvents;
+    let total = 0;
+    dates.forEach(d=>{
+     total += wagesEarnedOnDate(obj, d.date);
+    })
+    return total;
+ }
