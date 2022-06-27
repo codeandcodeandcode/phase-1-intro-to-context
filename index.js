@@ -72,3 +72,10 @@ function findEmployeeByFirstName(arr, name) {
     if(f) return f;
     return undefined;
 }
+
+//Added calculatePayroll function
+function calculatePayroll(arr) {
+    let s = 0;
+    arr.forEach(a=>s+=allWagesFor(a))
+    return s;
+}
