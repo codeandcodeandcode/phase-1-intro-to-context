@@ -1,12 +1,14 @@
 // Your code here
-// Added createEmployeeRecords dunction 
-function createEmployeeRecords(arr) {
-    let lgArr = [];
-    arr.forEach(a => {
-        let t = createEmployeeRecord(a)
-        lgArr.push(t)
-    });
-    return lgArr;
+// Added createEmployeeRecord function
+function createEmployeeRecord(arr) {
+    return {
+        firstName: arr[0],
+        familyName: arr[1],
+        title: arr[2],
+        payPerHour: arr[3],
+        timeInEvents: [],
+        timeOutEvents: [],
+    }
 }
 
 // Added createEmployeeRecords dunction 
@@ -18,6 +20,7 @@ function createEmployeeRecords(arr) {
     });
     return lgArr;
 }
+
 
 // Added createTimeInEvent function 
 function createTimeInEvent(obj, dt) {
@@ -31,6 +34,7 @@ function createTimeInEvent(obj, dt) {
     return obj;
 }
 
+
 //Added createTimeOutEvent function
 function createTimeOutEvent(obj, dt) {
     let d = dt.split(" ");
@@ -42,6 +46,7 @@ function createTimeOutEvent(obj, dt) {
     obj.timeOutEvents.push(to)
     return obj;
 }
+
 
 //Added hoursWorkedOnDate func
 function hoursWorkedOnDate(obj, dt) {
@@ -58,15 +63,15 @@ function wagesEarnedOnDate(obj, dt) {
 
 //Added allWagesFor function
 function allWagesFor(obj) {
-    let dates = obj.timeInEvents;
-    let total = 0;
-    dates.forEach(d=>{
-     total += wagesEarnedOnDate(obj, d.date);
-    })
-    return total;
- }
+   let dates = obj.timeInEvents;
+   let total = 0;
+   dates.forEach(d=>{
+    total += wagesEarnedOnDate(obj, d.date);
+   })
+   return total;
+}
 
- //Added findEmployeeByFirstName function
+//Added findEmployeeByFirstName function
 function findEmployeeByFirstName(arr, name) {
     let f = arr.find(a=>a.firstName === name)
     if(f) return f;
@@ -78,6 +83,4 @@ function calculatePayroll(arr) {
     let s = 0;
     arr.forEach(a=>s+=allWagesFor(a))
     return s;
-
-    
 }
