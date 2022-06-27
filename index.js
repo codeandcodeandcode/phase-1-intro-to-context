@@ -42,3 +42,10 @@ function createTimeOutEvent(obj, dt) {
     obj.timeOutEvents.push(to)
     return obj;
 }
+
+//Added hoursWorkedOnDate func
+function hoursWorkedOnDate(obj, dt) {
+    let a  = obj.timeInEvents.find(a=>a.date === dt);
+    let b  = obj.timeOutEvents.find(a=>a.date === dt);
+    return (b.hour - a.hour) / 100;
+}
