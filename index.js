@@ -78,4 +78,6 @@ function calculatePayroll(arr) {
     let s = 0;
     arr.forEach(a=>s+=allWagesFor(a))
     return s;
+
+    
 }
